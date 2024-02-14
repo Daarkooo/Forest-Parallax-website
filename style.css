@@ -10,7 +10,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #333;
+}
+
+::selection{
+  background-color: #0b372dbb;
 }
 
 .logo {
@@ -18,12 +21,16 @@ body {
 }
 
 header {
+  position: absolute; /* the header will be in front of the main, u can say the main is taking place of the header*/
+  z-index: 9999; /* to make sure that navbar will be always in front of everything */
+  width: 0.9rem 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* the line below the header */
 }
 
 header nav {
-  /* background-color: red; */
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
@@ -79,20 +86,256 @@ header ul a {
 
 .hamburger .bar::before,
 .hamburger .bar::after {
-    content: ""; /* this so important or the bar will no be displayed*/
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* to center the two bars*/
-    width: 60%; /* 60% from the parent the bar in between */
-    height: 10%;
-    background-color: inherit;
-    border-radius: 2px;
+  content: ""; /* this so important or the bar will no be displayed*/
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* to center the two bars*/
+  width: 60%; /* 60% from the parent the bar in between */
+  height: 10%;
+  background-color: inherit;
+  border-radius: 2px;
 }
 
-.hamburger .bar::before{
-    top: -4.5px;
+.hamburger .bar::before {
+  top: -4.5px;
 }
 
-.hamburger .bar::after{
-    top: 4.5px;
+.hamburger .bar::after {
+  top: 4.5px;
+}
+
+main {
+  position: relative;
+  height: 100vh; /* the main element is underneath the nav bar with green color and a scroll bar depend on ..vh */
+  width: 100vw;
+  overflow: hidden; /*all the images has been clipped*/
+}
+
+.parallax {
+  pointer-events: none;
+  trabsition: 0.45s cubic-bezier(.2,.49,.32,.99) ;
+}
+
+.bg-img {
+  position: absolute;
+  width: 2800px;
+  top: calc(
+    50% - 390px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% + 10px); /* calc for fixing the background img position */
+  z-index: 1;
+}
+
+.fog-7 {
+  position: absolute;
+  z-index: 2;
+  width: 1900px;
+  top: calc(
+    50% - 100px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% + 300px); /* calc for fixing the background img position */
+}
+
+.mountain-10 {
+  position: absolute;
+  z-index: 3;
+  width: 892px;
+  top: calc(
+    50% + 69px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% + 230px); /* calc for fixing the background img position */
+}
+
+.fog-6 {
+  position: absolute;
+  z-index: 4;
+  width: 1510px;
+  top: calc(
+    50% + 85px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% + 10px); /* calc for fixing the background img position */
+}
+
+.mountain-9 {
+  position: absolute;
+  z-index: 5;
+  width: 470px;
+  top: calc(
+    50% + 113px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% - 457px); /* calc for fixing the background img position */
+}
+
+.mountain-8 {
+  position: absolute;
+  z-index: 6;
+  width: 810px;
+  top: calc(
+    50% + 86px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% - 202px); /* calc for fixing the background img position */
+}
+
+.fog-5 {
+  position: absolute;
+  z-index: 7;
+  width: 450px;
+  top: calc(
+    50% + 160px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% + 20px); /* calc for fixing the background img position */
+}
+.mountain-7 {
+  position: absolute;
+  z-index: 8;
+  width: 538px;
+  top: calc(
+    50% + 123px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% + 305px); /* calc for fixing the background img position */
+}
+
+.text {
+  position: absolute;
+  z-index: 9;
+  top: calc(50% - 130px);
+  left: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: auto;
+  color: #fff;
+}
+
+.text h2 {
+  font-weight: 100;
+  font-size: 6.5rem;
+  line-height: 0.88;
+}
+
+.text h1 {
+  font-weight: 800;
+  font-size: 8rem;
+  line-height: 0.88;
+}
+
+.mountain-6 {
+  position: absolute;
+  z-index: 10;
+  width: 408px;
+  top: calc(
+    50% + 60px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% + 590px); /* calc for fixing the background img position */
+}
+
+.fog-4 {
+  position: absolute;
+  z-index: 11;
+  width: 590px;
+  top: calc(
+    50% + 223px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% - 60px); /* calc for fixing the background img position */
+}
+
+.mountain-5 {
+  position: absolute;
+  z-index: 12;
+  width: 625px;
+  top: calc(
+    50% + 250px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% + 130px); /* calc for fixing the background img position */
+}
+
+.fog-3 {
+  position: absolute;
+  z-index: 13;
+  width: 1600px;
+  top: calc(
+    50% + 110px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% - 15px); /* calc for fixing the background img position */
+}
+
+.mountain-4 {
+  position: absolute;
+  z-index: 14;
+  width: 780px;
+  top: calc(
+    50% + 196px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% - 381.5px); /* calc for fixing the background img position */
+}
+
+.fog-2 {
+  position: absolute;
+  z-index: 16;
+  width: 1560px;
+  top: calc(
+    50% + 147px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% - 30px); /* calc for fixing the background img position */
+}
+
+.mountain-2 {
+  position: absolute;
+  z-index: 17;
+  width: 690px;
+  top: calc(
+    50% + 154px
+  ); /* all this next 3 steps are made to center the background image */
+  /* left: calc(50% + 412px);  calc for fixing the background img position */
+}
+
+.fog-1 {
+  position: absolute;
+  z-index: 21;
+  width: 1600px;
+  top: calc(100% - 355px);
+  left: 50%;
+}
+
+.mountain-1 {
+  position: absolute;
+  z-index: 18;
+  width: 530px;
+  top: calc(
+    50% + 17px
+  ); /* all this next 3 steps are made to center the background image */
+  left: calc(50% - 601px); /* calc for fixing the background img position */
+}
+
+.sun-rays {
+  position: absolute;
+  z-index: 19;
+  top: 0;
+  right: 0;
+  width: 595px;
+  pointer-events: none;
+}
+
+.black-shadow {
+  position: absolute;
+  z-index: 20;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+
+}
+
+.vignette {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(0, 0, 0, 0.7)
+  );
+  pointer-events: none;
 }
