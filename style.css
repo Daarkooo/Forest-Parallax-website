@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #333;
+}
+
+.logo {
+  width: 100px;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header nav {
+  /* background-color: red; */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between; /* make the margin between the logo and the list */
+  align-items: center; /* the logo back to his normal form */
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+header ul a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.83rem;
+}
+
+.search a {
+  font-size: 1.05rem;
+  padding: 0 3rem;
+}
+
+.hamburger {
+  padding-left: 1.5rem;
+}
+
+.hamburger a {
+  padding: 0;
+  width: 37px;
+  height: 37px;
+  display: flex;
+  border-radius: 50%;
+  background-color: rgb(115, 115, 115, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger .bar {
+  position: relative;
+  width: 52%;
+  height: 1.3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.hamburger .bar::before,
+.hamburger .bar::after {
+    content: ""; /* this so important or the bar will no be displayed*/
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* to center the two bars*/
+    width: 60%; /* 60% from the parent the bar in between */
+    height: 10%;
+    background-color: inherit;
+    border-radius: 2px;
+}
+
+.hamburger .bar::before{
+    top: -4.5px;
+}
+
+.hamburger .bar::after{
+    top: 4.5px;
+}
