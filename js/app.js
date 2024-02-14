@@ -1,6 +1,7 @@
+// import { gsap } from "gsap";
 
 const parallax_el = document.querySelectorAll(".parallax");
-
+const main = document.querySelector("main");
 
 let xValue = 0,
   yValue = 0;
@@ -17,9 +18,7 @@ function update(cursorPosition) {
     let isInLeft =
       parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1; // to check if the layer is in the left part of the window
     let zValue =
-      (cursorPosition - parseFloat(getComputedStyle(el).left)) *
-      isInLeft *
-      0.1;
+      (cursorPosition - parseFloat(getComputedStyle(el).left)) * isInLeft * 0.1;
 
     el.style.transform = `translateX(calc(-50% + ${
       -xValue * speedx
@@ -41,5 +40,27 @@ window.addEventListener("mousemove", (e) => {
 
   update(e.clientX);
 });
+
+if(window.innerWidth >= 725){
+    main.style.maxHeight = `${window.innerWidth * 0.6}px`;
+}else{
+    main.style.maxHeight = `${window.innerWidth * 1.6}px`;
+}
+
+
+/* GSAP Animation */
+
+// let timeline = gsap.timeline();
+
+// parallax_el.forEach(el => {
+//     timeline.from(
+//         el,
+//       {
+//         top: `${el.offsetHeight / 2 + +200}px`,
+//         duration: 1,
+//       },
+//       "1"
+//     );
+// })
 
 
